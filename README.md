@@ -35,7 +35,7 @@ ficha-heroi-parte1/
 
 ## Protótipo
 
-Link do protótipo: (colocar o link aqui)
+Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-prototipo/
 
 ## O que foi aplicado
 
