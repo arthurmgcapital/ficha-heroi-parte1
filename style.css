@@ -49,23 +49,13 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
     position: sticky;
     top: 0;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px var(--espaco);
     background-color: rgba(13, 13, 13, 0.9);
     border-bottom: 2px solid var(--primaria);
 }
 
-.logo {
-    font-family: var(--fonte-titulo);
-    font-size: 34px;
-    color: var(--primaria);
-    text-decoration: none;
-    text-shadow: 3px 0 var(--secundaria);
-}
-
-.menu { display: flex; justify-content: space-between; gap: 8px; list-style: none; }
+.menu { display: flex; align-items: center; gap: 8px; max-width: 900px; margin: 0 auto; list-style: none; }
+.menu li { flex: 1; text-align: center; }
 
 .menu a {
     display: block;
@@ -79,16 +69,22 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
 
 .menu a:hover, .menu a:focus { background-color: var(--primaria); color: var(--fundo); }
 
+.menu .logo {
+    padding: 0 16px;
+    font-size: 34px;
+    color: var(--primaria);
+    text-shadow: 3px 0 var(--secundaria);
+}
+
 .secao { max-width: 1100px; margin: 0 auto; padding: 80px var(--espaco); scroll-margin-top: 60px; }
 h2 { font-size: 42px; color: var(--primaria); text-align: center; margin-bottom: 40px; }
 h2 i { color: var(--secundaria); }
+#sobre { padding-top: 40px; }
 
 /* Sobre o herói */
 .intro {
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 14px;
     text-align: center;
@@ -106,7 +102,8 @@ h2 i { color: var(--secundaria); }
 
 h1 {
     font-size: 120px;
-    line-height: 1.4;
+    line-height: 1.35;
+    text-transform: uppercase;
     color: var(--secundaria);
     text-shadow: 5px 0 var(--primaria), -5px 0 var(--destaque);
 }
@@ -237,7 +234,7 @@ h1 {
 .zoom-fone { object-position: 50% 10%; transform-origin: 50% 50%; }
 .zoom-logo { object-position: 50% 21%; transform-origin: 50% 50%; }
 .zoom-spray { object-position: 50% 63%; transform-origin: 17% 50%; }
-.icone-conquista { display: flex; justify-content: center; align-items: center; font-size: 80px; color: var(--destaque); }
+.icone-conquista img { display: block; width: 100%; height: 100%; }
 
 .raridade {
     display: inline-block;
@@ -312,10 +309,11 @@ h1 {
 
 /* Responsividade */
 @media (max-width: 599px) {
-    .cabecalho { flex-direction: column; gap: 4px; padding: 8px 12px; }
-    .logo { font-size: 28px; }
+    .cabecalho { padding: 8px 12px; }
+    .menu { flex-wrap: wrap; }
+    .menu .item-logo { order: -1; flex-basis: 100%; }
+    .menu .logo { font-size: 28px; }
     .palco { top: 130px; }
-    .menu { width: 100%; }
     .menu a { padding: 12px 6px; font-size: 13px; }
     .secao { padding: 56px 16px; scroll-margin-top: 110px; }
     h1 { font-size: 80px; }

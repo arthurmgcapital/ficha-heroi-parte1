@@ -25,6 +25,8 @@ ficha-heroi-parte1/
 ├── imagens/
 │   ├── syx.webp
 │   ├── syx-giro.webp
+│   ├── conquista-telhados.svg
+│   ├── conquista-torre.svg
 │   └── cidade.webp
 └── fontes/
     └── far-from-homecoming.otf
@@ -64,3 +66,4 @@ Link do protótipo: (colocar o link aqui)
 - Ícones: Font Awesome.
 - Imagens do personagem geradas com IA (ChatGPT) a partir da descrição do Syx feita para este projeto.
 - Fundo da cidade desenhado em SVG para este projeto e convertido para WebP.
+- Ilustrações das conquistas desenhadas em SVG para este projeto.
