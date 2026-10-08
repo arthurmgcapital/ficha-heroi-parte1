@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" width="340" height="200">
+<defs>
+<linearGradient id="torre-ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D0D0D"/><stop offset=".6" stop-color="#1a0a0f"/><stop offset="1" stop-color="#2a0a10"/></linearGradient>
+<radialGradient id="torre-halo" cx="170" cy="32" r="110" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#E9B44C" stop-opacity=".55"/><stop offset=".35" stop-color="#E9B44C" stop-opacity=".18"/><stop offset="1" stop-color="#E9B44C" stop-opacity="0"/></radialGradient>
+<radialGradient id="torre-lua" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFF6DD"/><stop offset=".55" stop-color="#F2CF83"/><stop offset="1" stop-color="#E9B44C"/></radialGradient>
+<linearGradient id="torre-sombra-lua" x1="0" y1="0" x2="1" y2="1"><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<mask id="torre-mascara-lua"><circle cx="170" cy="30" r="31" fill="url(#torre-sombra-lua)"/></mask>
+<linearGradient id="torre-frente" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c0e16"/><stop offset=".3" stop-color="#1c080d"/><stop offset="1" stop-color="#140609"/></linearGradient>
+<linearGradient id="torre-lado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b0305"/><stop offset="1" stop-color="#3a0d16"/></linearGradient>
+<linearGradient id="torre-muro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1019"/><stop offset="1" stop-color="#22090f"/></linearGradient>
+<linearGradient id="torre-lata" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6e0f1c"/><stop offset=".22" stop-color="#E8394F"/><stop offset=".4" stop-color="#ff9aa6"/><stop offset=".55" stop-color="#E8394F"/><stop offset="1" stop-color="#4f0a15"/></linearGradient>
+<linearGradient id="torre-rotulo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0D0D0D"/><stop offset=".4" stop-color="#3a3a3a"/><stop offset="1" stop-color="#0D0D0D"/></linearGradient>
+<linearGradient id="torre-metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6b6b6b"/><stop offset=".4" stop-color="#FAFAFA"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient>
+<radialGradient id="torre-nevoa" cx="313.4" cy="111.2" r="78" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FAFAFA"/><stop offset=".2" stop-color="#E8394F" stop-opacity=".9"/><stop offset=".6" stop-color="#E8394F" stop-opacity=".3"/><stop offset="1" stop-color="#E8394F" stop-opacity="0"/></radialGradient>
+<mask id="torre-mascara-nevoa"><g filter="url(#torre-borrao)"><path d="M313.4 111.2L239.7 104.7A74 74 0 0 1 266.8 53.8Z" fill="url(#torre-nevoa)"/><circle cx="295.8" cy="101.8" r="7" fill="#fff" opacity="1"/><circle cx="279.9" cy="93.4" r="11" fill="#fff" opacity="0.8"/><circle cx="262.2" cy="84" r="15" fill="#fff" opacity="0.6"/><circle cx="273.5" cy="79.8" r="9" fill="#fff" opacity="0.5"/><circle cx="269.4" cy="100.3" r="8" fill="#fff" opacity="0.5"/></g></mask>
+<linearGradient id="torre-desce" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<mask id="torre-mascara-baixo"><rect width="340" height="200" fill="url(#torre-desce)"/></mask>
+<radialGradient id="torre-vinheta" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#0D0D0D" stop-opacity="0"/><stop offset="1" stop-color="#0D0D0D" stop-opacity=".75"/></radialGradient>
+<pattern id="torre-reticula" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2.5" cy="2.5" r="1.1" fill="#E8394F"/></pattern>
+<pattern id="torre-reticula-ouro" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2" cy="2" r="1.05" fill="#a8741c"/></pattern>
+<pattern id="torre-reticula-clara" width="3.4" height="3.4" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="1.7" cy="1.7" r=".85" fill="#FAFAFA"/></pattern>
+<filter id="torre-neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="torre-borrao" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="torre-borrao-leve" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+<clipPath id="torre-moldura"><rect width="340" height="200" rx="8"/></clipPath>
+<path id="torre-syx" d="M157.1 49L154.4 60.4L140.9 62.4L138 65.7L138.1 67.2L141.1 70.1L149.4 69.6L156.9 76.5L157.5 84.5L150.6 91.8L138.6 92.7L127.2 102.3L127.2 102.3L135.9 87.4L147.4 85.7L150.3 82.1L150.2 79.9L146.9 77.2L138.2 77.8L131.3 70.2L130.8 63.4L137.5 55.7L151 54.8L157.1 49ZM158 48.9L165.1 53.3L175.6 71.3L169 74.8L160.3 57.2L158 48.9ZM184 47.1L182.9 55.6L176.7 74.3L169.7 71.7L177.6 52.5L184 47.1ZM176.4 68.1L176.7 85.8L174.8 101.8L174.8 101.8L170.6 86.3L168.5 68.7ZM187.7 46.8L194.6 51.3L213.3 81.7L212.9 81.1L222.9 97.5L222.9 97.5L207.6 85.7L189.2 54.9L187.7 46.8ZM213.7 45L212.8 53.4L198.4 87L190.1 95.1L190.1 95.1L192.7 83.8L207.1 50.3L213.7 45Z"/>
+</defs>
+<g clip-path="url(#torre-moldura)">
+<g id="ceu">
+<rect width="340" height="200" fill="url(#torre-ceu)"/>
+<rect width="340" height="200" fill="url(#torre-halo)"/>
+<path fill="#FAFAFA" d="M112 13L113.5 18.5L119 20L113.5 21.5L112 27L110.5 21.5L105 20L110.5 18.5ZM236 9L236.9 12.1L240 13L236.9 13.9L236 17L235.1 13.9L232 13L235.1 12.1ZM98 47L98.7 49.3L101 50L98.7 50.7L98 53L97.3 50.7L95 50L97.3 49.3ZM250 63.5L250.6 65.5L252.5 66L250.6 66.6L250 68.5L249.5 66.6L247.5 66L249.5 65.5Z" filter="url(#torre-neon)"/>
+</g>
+<g id="lua">
+<circle cx="170" cy="30" r="44" fill="#E9B44C" opacity=".35" filter="url(#torre-borrao)"/>
+<circle cx="168.5" cy="30" r="31" fill="#E8394F" opacity=".8"/>
+<circle cx="170" cy="30" r="31" fill="url(#torre-lua)"/>
+<rect x="130" y="-5" width="80" height="70" fill="url(#torre-reticula-ouro)" mask="url(#torre-mascara-lua)"/>
+</g>
+<g id="torre">
+<path d="M166.8 34L168.6 5h2.8l1.8 29Z" fill="#120507"/>
+<path d="M163 22h14M164.5 14h11" stroke="#120507" stroke-width="1.6"/>
+<path d="M144 47L146 33H194L196 47Z" fill="#1c080d" stroke="#E8394F" stroke-width=".8"/>
+<path d="M194 33l9 2.5 1.5 12.5H196Z" fill="#0b0305"/>
+<path d="M250 200L236.3 46L255.3 53L272 200Z" fill="url(#torre-lado)"/>
+<path d="M247.7 108L254.7 109L254.7 114L247.7 113ZM249.1 122L256.1 123L256.1 128.5L249.1 127.5ZM250.5 137L257.7 138L257.7 144L250.5 143ZM252.1 153L259.4 154L259.4 160.5L252.1 159.5ZM253.7 170L261.2 171L261.2 178L253.7 177ZM255.4 188L263 189L263 196.5L255.4 195.5Z" fill="#E8394F" opacity=".55"/>
+<path d="M90 200L103.7 46L236.3 46L250 200Z" fill="#E8394F" transform="translate(-1.6 0)"/>
+<path d="M90 200L103.7 46L236.3 46L250 200Z" fill="url(#torre-frente)"/>
+<path d="M103.7 46L236.3 46L241.2 101L98.8 101Z" fill="url(#torre-muro)"/>
+<path d="M101.7 44H238.3v3.5H101.7Z" fill="#4a1822"/>
+<path d="M101.7 44H238.3" stroke="#FAFAFA" stroke-opacity=".55" stroke-width=".8"/>
+<path d="M95.8 101H244.2l-1 4.5H96.8Z" fill="#4a1822"/>
+<path d="M95.8 101H244.2" stroke="#E8394F" stroke-width=".9"/>
+<path d="M114.3 106L107.8 200M130.2 106L125.6 200M146.1 106L143.3 200M162 106L161.1 200M178 106L178.9 200M193.9 106L196.7 200M209.8 106L214.4 200M225.7 106L232.2 200" stroke="#2e0f17" stroke-width="1.6"/>
+<path fill="#E9B44C" d="M102.5 110L109.5 110L109.2 114L102.1 114ZM118.5 110L125.5 110L125.3 114L118.2 114ZM134.1 119L141.2 119L141 123.6L133.9 123.6ZM182.6 119L189.7 119L189.8 123.6L182.7 123.6ZM166.4 129L173.6 129L173.6 134.1L166.4 134.1ZM182.8 129L190 129L190.1 134.1L182.9 134.1ZM199.1 129L206.4 129L206.6 134.1L199.3 134.1ZM116.6 140L123.9 140L123.6 145.7L116.2 145.7ZM115.8 152L123.2 152L122.9 158.2L115.4 158.2ZM132.6 152L140 152L139.8 158.2L132.4 158.2ZM183.1 152L190.5 152L190.7 158.2L183.2 158.2ZM200 152L207.4 152L207.6 158.2L200.2 158.2ZM217.5 165L225 165L225.4 171.8L217.9 171.8ZM234.6 165L242.1 165L242.7 171.8L235.1 171.8ZM131.5 179L139.1 179L138.8 186.3L131.1 186.3ZM183.5 179L191.2 179L191.4 186.3L183.7 186.3ZM148.5 194L156.2 194L156.1 201.9L148.3 201.9Z"/><path fill="#E8394F" d="M214.5 110L221.5 110L221.8 114L214.7 114ZM117.9 119L125 119L124.8 123.6L117.6 123.6ZM215 119L222.1 119L222.4 123.6L215.2 123.6ZM100.9 129L108.1 129L107.7 134.1L100.5 134.1ZM133.6 129L140.9 129L140.7 134.1L133.4 134.1ZM215.5 129L222.7 129L223.1 134.1L215.8 134.1Z"/><path fill="#FAFAFA" d="M183.3 165L190.8 165L191 171.8L183.4 171.8ZM114.1 179L121.7 179L121.3 186.3L113.6 186.3ZM166.2 179L173.8 179L173.9 186.3L166.1 186.3Z"/><path fill="#3d1520" d="M134.5 110L141.5 110L141.4 114L134.3 114ZM150.5 110L157.5 110L157.5 114L150.4 114ZM166.5 110L173.5 110L173.5 114L166.5 114ZM182.5 110L189.5 110L189.6 114L182.5 114ZM198.5 110L205.5 110L205.7 114L198.6 114ZM230.5 110L237.5 110L237.9 114L230.8 114ZM101.7 119L108.8 119L108.5 123.6L101.4 123.6ZM150.3 119L157.4 119L157.3 123.6L150.2 123.6ZM166.4 119L173.6 119L173.6 123.6L166.4 123.6ZM198.8 119L205.9 119L206.1 123.6L199 123.6ZM231.2 119L238.3 119L238.6 123.6L231.5 123.6ZM117.3 129L124.5 129L124.2 134.1L116.9 134.1ZM150 129L157.2 129L157.1 134.1L149.9 134.1ZM231.9 129L239.1 129L239.5 134.1L232.3 134.1ZM100 140L107.3 140L106.9 145.7L99.5 145.7ZM133.2 140L140.5 140L140.3 145.7L132.9 145.7ZM149.8 140L157.1 140L157 145.7L149.6 145.7ZM166.3 140L173.7 140L173.7 145.7L166.3 145.7ZM182.9 140L190.2 140L190.4 145.7L183 145.7ZM199.5 140L206.8 140L207.1 145.7L199.7 145.7ZM216.1 140L223.4 140L223.8 145.7L216.4 145.7ZM232.7 140L240 140L240.5 145.7L233.1 145.7ZM99 152L106.4 152L105.9 158.2L98.5 158.2ZM149.5 152L156.9 152L156.8 158.2L149.3 158.2ZM166.3 152L173.7 152L173.7 158.2L166.3 158.2ZM216.8 152L224.2 152L224.6 158.2L217.1 158.2ZM233.6 152L241 152L241.5 158.2L234.1 158.2ZM97.9 165L105.4 165L104.9 171.8L97.3 171.8ZM115 165L122.5 165L122.1 171.8L114.6 171.8ZM132.1 165L139.6 165L139.3 171.8L131.8 171.8ZM149.2 165L156.7 165L156.6 171.8L149 171.8ZM166.2 165L173.8 165L173.8 171.8L166.2 171.8ZM200.4 165L207.9 165L208.2 171.8L200.7 171.8ZM96.7 179L104.4 179L103.8 186.3L96.1 186.3ZM148.8 179L156.5 179L156.3 186.3L148.6 186.3ZM200.9 179L208.5 179L208.9 186.3L201.2 186.3ZM218.3 179L225.9 179L226.4 186.3L218.7 186.3ZM235.6 179L243.3 179L243.9 186.3L236.2 186.3ZM95.5 194L103.2 194L102.7 201.9L94.8 201.9ZM113.1 194L120.9 194L120.5 201.9L112.6 201.9ZM130.8 194L138.6 194L138.3 201.9L130.5 201.9ZM166.1 194L173.9 194L173.9 201.9L166.1 201.9ZM183.8 194L191.5 194L191.7 201.9L183.9 201.9ZM201.4 194L209.2 194L209.5 201.9L201.7 201.9ZM219.1 194L226.9 194L227.4 201.9L219.5 201.9ZM236.8 194L244.5 194L245.2 201.9L237.3 201.9Z"/>
+<circle cx="170" cy="5" r="2.2" fill="#E8394F" filter="url(#torre-neon)"/>
+<circle cx="170" cy="5" r=".9" fill="#FAFAFA"/>
+</g>
+<g id="pichacao-syx">
+<ellipse cx="172" cy="76" rx="56" ry="20" fill="#E8394F" opacity=".35" filter="url(#torre-borrao)"/>
+<use href="#torre-syx" fill="#0D0D0D" transform="translate(2.4 2.6)" opacity=".85"/>
+<use href="#torre-syx" fill="#E8394F" transform="translate(-2.2 1.2)" opacity=".8"/>
+<use href="#torre-syx" fill="#FAFAFA" transform="translate(1.4 -1.3)" opacity=".35"/>
+<g stroke-linecap="round">
+<path d="M141.4 92v13M149.8 91v7M173.7 86v19M197.9 86.2v9M210.9 85.3v15M132.7 60.9v6" stroke="#E8394F" stroke-width="3.6"/>
+<path d="M141.4 92v13M149.8 91v7M173.7 86v19M197.9 86.2v9M210.9 85.3v15M132.7 60.9v6" stroke="#FAFAFA" stroke-width="1.7"/>
+</g>
+<g fill="#FAFAFA" stroke="#E8394F" stroke-width=".9"><circle cx="141.4" cy="105" r="1.5"/><circle cx="149.8" cy="98" r="1.5"/><circle cx="173.7" cy="105" r="1.5"/><circle cx="197.9" cy="95.2" r="1.5"/><circle cx="210.9" cy="100.3" r="1.5"/><circle cx="132.7" cy="66.9" r="1.5"/></g>
+<use href="#torre-syx" fill="#FAFAFA" stroke="#E8394F" stroke-width="2.4" paint-order="stroke" stroke-linejoin="round"/>
+</g>
+<g id="predios-laterais">
+<path d="M-2 200L56 200L81.3 0L-2 0Z" fill="#E8394F" transform="translate(1.6 0)"/>
+<path d="M-2 200L56 200L81.3 0L-2 0Z" fill="#100406"/>
+<path d="M342 200L288 200L261.8 0L342 0Z" fill="#FAFAFA" opacity=".55" transform="translate(-1.4 0)"/>
+<path d="M342 200L288 200L261.8 0L342 0Z" fill="#100406"/>
+<path fill="#E9B44C" d="M19.3 127h5v5.5h-5zM41.5 138h5v5.5h-5zM52.7 138h5v5.5h-5zM49.6 160h5v5.5h-5z"/><path fill="#E8394F" d="M68.1 28h5v5.5h-5zM13.3 160h5v5.5h-5zM48.1 171h5v5.5h-5z"/><path fill="#FAFAFA" d="M58.4 28h5v5.5h-5zM46.5 182h5v5.5h-5z"/><path fill="#3d1520" d="M41.4 6h5v5.5h-5zM51.5 6h5v5.5h-5zM61.7 6h5v5.5h-5zM71.2 6h5v5.5h-5zM39.3 17h5v5.5h-5zM49.7 17h5v5.5h-5zM60.1 17h5v5.5h-5zM69.6 17h5v5.5h-5zM37.3 28h5v5.5h-5zM47.9 28h5v5.5h-5zM35.3 39h5v5.5h-5zM33.3 50h5v5.5h-5zM31.3 61h5v5.5h-5zM29.3 72h5v5.5h-5zM27.3 83h5v5.5h-5zM25.3 94h5v5.5h-5zM23.3 105h5v5.5h-5zM21.3 116h5v5.5h-5zM17.3 138h5v5.5h-5zM29.4 138h5v5.5h-5zM15.3 149h5v5.5h-5zM27.6 149h5v5.5h-5zM39.8 149h5v5.5h-5zM51.1 149h5v5.5h-5zM25.7 160h5v5.5h-5zM38.1 160h5v5.5h-5zM11.3 171h5v5.5h-5zM23.9 171h5v5.5h-5zM36.4 171h5v5.5h-5zM9.3 182h5v5.5h-5zM22 182h5v5.5h-5zM34.8 182h5v5.5h-5zM7.3 193h5v5.5h-5zM20.2 193h5v5.5h-5zM33.1 193h5v5.5h-5zM45 193h5v5.5h-5z"/><path fill="#E9B44C" d="M280.6 6h5v5.5h-5zM273.5 28h5v5.5h-5zM284.1 28h5v5.5h-5zM275.1 39h5v5.5h-5zM289.2 61h5v5.5h-5zM279.8 72h5v5.5h-5zM296.1 105h5v5.5h-5zM286.1 116h5v5.5h-5zM287.6 127h5v5.5h-5zM299.6 127h5v5.5h-5zM311.5 127h5v5.5h-5zM322.5 127h5v5.5h-5z"/><path fill="#E8394F" d="M276.7 50h5v5.5h-5zM302.1 72h5v5.5h-5zM305.9 94h5v5.5h-5zM297.8 116h5v5.5h-5zM292.3 160h5v5.5h-5zM308.2 182h5v5.5h-5z"/><path fill="#FAFAFA" d="M300.2 6h5v5.5h-5z"/><path fill="#3d1520" d="M270.4 6h5v5.5h-5zM290.8 6h5v5.5h-5zM272 17h5v5.5h-5zM282.3 17h5v5.5h-5zM292.7 17h5v5.5h-5zM302.2 17h5v5.5h-5zM294.6 28h5v5.5h-5zM304.3 28h5v5.5h-5zM285.8 39h5v5.5h-5zM296.5 39h5v5.5h-5zM306.3 39h5v5.5h-5zM287.5 50h5v5.5h-5zM298.3 50h5v5.5h-5zM308.3 50h5v5.5h-5zM278.2 61h5v5.5h-5zM300.2 61h5v5.5h-5zM310.4 61h5v5.5h-5zM290.9 72h5v5.5h-5zM312.4 72h5v5.5h-5zM281.4 83h5v5.5h-5zM292.7 83h5v5.5h-5zM304 83h5v5.5h-5zM314.4 83h5v5.5h-5zM282.9 94h5v5.5h-5zM294.4 94h5v5.5h-5zM316.4 94h5v5.5h-5zM284.5 105h5v5.5h-5zM307.7 105h5v5.5h-5zM318.5 105h5v5.5h-5zM309.6 116h5v5.5h-5zM320.5 116h5v5.5h-5zM289.2 138h5v5.5h-5zM301.3 138h5v5.5h-5zM313.4 138h5v5.5h-5zM324.6 138h5v5.5h-5zM290.7 149h5v5.5h-5zM303 149h5v5.5h-5zM315.3 149h5v5.5h-5zM326.6 149h5v5.5h-5zM304.7 160h5v5.5h-5zM317.2 160h5v5.5h-5zM328.6 160h5v5.5h-5zM293.9 171h5v5.5h-5zM306.5 171h5v5.5h-5zM319 171h5v5.5h-5zM330.7 171h5v5.5h-5zM295.4 182h5v5.5h-5zM320.9 182h5v5.5h-5zM332.7 182h5v5.5h-5zM297 193h5v5.5h-5zM309.9 193h5v5.5h-5zM322.8 193h5v5.5h-5zM334.7 193h5v5.5h-5z"/>
+<g transform="translate(30 78) rotate(7)" fill="none" filter="url(#torre-neon)">
+<rect x="-9" y="-36" width="18" height="72" rx="4" stroke="#E8394F" stroke-width="1.8"/>
+<g stroke="#FAFAFA" stroke-width="1.3"><circle cy="-23" r="4.2"/><path d="M0 -12.5l4.5 7.5h-9z"/><path d="M0 3l4.5 4.5L0 12l-4.5-4.5z"/><path d="M-4 19h8M-4 23h8M-4 27h8"/></g>
+</g>
+<g transform="translate(316 48) rotate(-7)" fill="none" filter="url(#torre-neon)">
+<rect x="-14" y="-7" width="28" height="14" rx="3.5" stroke="#E9B44C" stroke-width="1.6"/>
+<path d="M-8 -3l3 3-3 3M-3 -3l3 3-3 3M2 -3l3 3-3 3" stroke="#FAFAFA" stroke-width="1.2"/>
+</g>
+</g>
+<g id="nevoa-spray">
+<g filter="url(#torre-borrao)"><path d="M313.4 111.2L244 102.2A70 70 0 0 1 267.2 58.7Z" fill="url(#torre-nevoa)"/><circle cx="295.8" cy="101.8" r="7" fill="#E8394F" opacity="0.6"/><circle cx="279.9" cy="93.4" r="11" fill="#E8394F" opacity="0.4"/><circle cx="262.2" cy="84" r="15" fill="#E8394F" opacity="0.3"/><circle cx="273.5" cy="79.8" r="9" fill="#E8394F" opacity="0.3"/><circle cx="269.4" cy="100.3" r="8" fill="#E8394F" opacity="0.2"/></g>
+<rect width="340" height="200" fill="url(#torre-reticula-clara)" mask="url(#torre-mascara-nevoa)"/>
+<circle cx="298.2" cy="101.5" r="0.9" fill="#FAFAFA" opacity="0.7"/><circle cx="257" cy="87.8" r="0.8" fill="#E8394F" opacity="0.3"/><circle cx="273.4" cy="80.6" r="1.6" fill="#E8394F" opacity="0.4"/><circle cx="290.3" cy="104.3" r="1.3" fill="#FAFAFA" opacity="0.7"/><circle cx="271.7" cy="73" r="1.6" fill="#E8394F" opacity="0.4"/><circle cx="247.7" cy="91.2" r="1.1" fill="#E8394F" opacity="0.3"/><circle cx="272.7" cy="78.5" r="1.2" fill="#FAFAFA" opacity="0.4"/><circle cx="273.8" cy="86.8" r="0.8" fill="#FAFAFA" opacity="0.5"/><circle cx="276.9" cy="100.9" r="1.3" fill="#E8394F" opacity="0.6"/><circle cx="276.4" cy="90" r="1.5" fill="#FAFAFA" opacity="0.5"/><circle cx="296.9" cy="105.5" r="0.8" fill="#E8394F" opacity="0.7"/><circle cx="288.9" cy="90.2" r="1.4" fill="#E8394F" opacity="0.6"/><circle cx="252" cy="92.1" r="1" fill="#FAFAFA" opacity="0.3"/><circle cx="275.2" cy="79.2" r="0.9" fill="#FAFAFA" opacity="0.4"/><circle cx="265.5" cy="62.8" r="0.5" fill="#E8394F" opacity="0.3"/><circle cx="259.8" cy="100.8" r="0.6" fill="#FAFAFA" opacity="0.4"/><circle cx="292" cy="98.7" r="0.8" fill="#FAFAFA" opacity="0.7"/><circle cx="261.5" cy="102.6" r="1" fill="#FAFAFA" opacity="0.4"/><circle cx="301.1" cy="106.8" r="0.9" fill="#FAFAFA" opacity="0.8"/><circle cx="265.2" cy="94.9" r="1" fill="#E8394F" opacity="0.4"/><circle cx="279.3" cy="94.7" r="1.1" fill="#E8394F" opacity="0.6"/><circle cx="260.7" cy="92.7" r="1.3" fill="#FAFAFA" opacity="0.4"/><circle cx="303.9" cy="107.4" r="1.3" fill="#FAFAFA" opacity="0.8"/><circle cx="293.1" cy="95.8" r="1.2" fill="#E8394F" opacity="0.7"/><circle cx="300.4" cy="106.5" r="1.6" fill="#FAFAFA" opacity="0.8"/><circle cx="292.3" cy="99.8" r="0.6" fill="#E8394F" opacity="0.7"/>
+</g>
+<g id="lata-spray" transform="translate(298 152) rotate(28) scale(0.92)" stroke-linejoin="round">
+<g transform="translate(2.2 -1.4)" fill="none" stroke="#FAFAFA" stroke-opacity=".6" stroke-width="1.3"><rect x="-13" y="-28" width="26" height="58" rx="3"/><path d="M-13 -28Q-13 -40 0 -41Q13 -40 13 -28"/></g>
+<rect x="-13" y="-28" width="26" height="58" rx="3" fill="url(#torre-lata)" stroke="#0D0D0D" stroke-width="1.6"/>
+<rect x="-13" y="-5" width="26" height="22" fill="url(#torre-rotulo)"/>
+<path d="M-13 -5h26M-13 17h26" stroke="#FAFAFA" stroke-opacity=".7" stroke-width=".8"/>
+<path d="M0 -1.5L1.8 4.2L7.5 6L1.8 7.8L0 13.5L-1.8 7.8L-7.5 6L-1.8 4.2Z" fill="#E9B44C"/>
+<rect x="-8.5" y="-26" width="2.6" height="54" fill="#FAFAFA" opacity=".5"/>
+<path d="M-13 -28Q-13 -40 0 -41Q13 -40 13 -28Z" fill="url(#torre-metal)" stroke="#0D0D0D" stroke-width="1.6"/>
+<rect x="-4" y="-45" width="8" height="5" fill="#9a9a9a" stroke="#0D0D0D" stroke-width="1.2"/>
+<rect x="-6" y="-52" width="12" height="8" rx="2" fill="#FAFAFA" stroke="#0D0D0D" stroke-width="1.4"/>
+<circle cx="-6" cy="-48" r="1.4" fill="#0D0D0D"/>
+</g>
+<g id="chuva"><path d="M153.5 155.8l-2 7.3M266.8 34.1l-2.2 7.9M73.7 176.1l-1.7 6.2M12 188.1l-3.7 13.4M174.1 115.1l-3.3 11.6M61.4 103.6l-1.8 6.6M214.3 144.3l-3.6 12.8M25.1 114l-2.5 9M20.1 184.1l-2.3 8.2M55.9 56.7l-2.5 8.8M285.6 164.7l-3.6 12.9M278.5 141.5l-3.6 12.9M229.5 140.4l-3.2 11.5M111.1 80.7l-3.2 11.3M117.9 48.3l-2.8 10M215.4 135l-2.6 9.4M256 48.3l-3.3 11.9M187 88l-2.6 9.1M293.6 24.9l-2.9 10.4M194.5 131.9l-3.1 11M28 83.8l-3.8 13.6M256.4 102.4l-3.2 11.6M113.9 195.1l-1.8 6.5M274.6 89.3l-2.2 7.8M177.2 45.1l-3.6 12.8M359.9 106.9l-3.8 13.6" stroke="#FAFAFA" stroke-opacity=".14" stroke-width=".7"/></g>
+<g id="acabamento">
+<rect width="340" height="200" fill="url(#torre-reticula)" mask="url(#torre-mascara-baixo)" opacity=".4"/>
+<rect width="340" height="200" fill="url(#torre-vinheta)"/>
+</g>
+</g>
+</svg>

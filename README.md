@@ -27,6 +27,7 @@ ficha-heroi-parte1/
 │   ├── syx-giro.webp
 │   ├── conquista-telhados.svg
 │   ├── conquista-torre.svg
+│   ├── logo-syx.svg
 │   └── cidade.webp
 └── fontes/
     └── far-from-homecoming.otf
@@ -61,7 +62,7 @@ Link do protótipo: (colocar o link aqui)
 
 ## Créditos
 
-- Fonte dos títulos: Far From Homecoming (maisfontes).
+- Fonte dos títulos: Far From Homecoming (maisfontes). A logo SYX do ícone da aba foi feita com ela.
 - Fonte do texto: Chakra Petch (Google Fonts).
 - Ícones: Font Awesome.
 - Imagens do personagem geradas com IA (ChatGPT) a partir da descrição do Syx feita para este projeto.
