@@ -8,6 +8,12 @@ Syx é um grafiteiro hacker de nível 16 que vive em Nova Aurora, uma cidade cyb
 
 Visual: jovem negro, cabelo cacheado meio longo, fone neon, camiseta preta com a logo SYX, calça cargo e tênis Jordan vermelho e preto.
 
+## Site publicado
+
+https://arthurmgcapital.github.io/ficha-heroi-parte1/
+
+O formulário de contato só envia pelo site publicado. Abrindo o `index.html` direto do zip, o resto da página funciona normal.
+
 ## Como abrir
 
 1. Extraia o arquivo `.zip` ou baixe o repositório pelo GitHub (botão Code e depois Download ZIP).
@@ -29,6 +35,8 @@ ficha-heroi-parte1/
 │   ├── conquista-torre.svg
 │   ├── logo-syx.svg
 │   └── cidade.webp
+├── musica/
+│   └── trilha-syx.mp3
 └── fontes/
     └── far-from-homecoming.otf
 ```
@@ -43,6 +51,9 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - CSS em arquivo externo, organizado em blocos comentados por seção.
 - Paleta Jordan Bred (preto, vermelho, branco e dourado) em variáveis no `:root`.
 - Flexbox no menu e Grid no inventário, com 1 coluna no celular, 2 no tablet e 3 no desktop.
+- Top bar com a logo à esquerda e os links à direita. No celular vira menu sanduíche feito só com CSS (checkbox escondido e `:checked`).
+- Formulário de contato com o desenvolvedor (nome, telefone, e-mail, assunto e mensagem), enviado pelo FormSubmit sem JavaScript.
+- Trilha de fundo original com `<audio controls loop>`. Ela não toca sozinha porque os navegadores bloqueiam som automático.
 - Barras de atributo feitas com uma `div` e `width` em porcentagem.
 - `transition` nos botões, links do menu e cards do inventário.
 - Pseudo-elementos `::before` na estrela do item lendário e na ponta das setas.
@@ -68,3 +79,4 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - Imagens do personagem geradas com IA (ChatGPT) a partir da descrição do Syx feita para este projeto.
 - Fundo da cidade desenhado em SVG para este projeto e convertido para WebP.
 - Ilustrações das conquistas desenhadas em SVG para este projeto.
+- Trilha de fundo original composta em código para este projeto (lo-fi com synthwave, 85 BPM).

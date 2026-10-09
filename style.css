@@ -49,13 +49,23 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
     position: sticky;
     top: 0;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px var(--espaco);
     background-color: rgba(13, 13, 13, 0.9);
     border-bottom: 2px solid var(--primaria);
 }
 
-.menu { display: flex; align-items: center; gap: 8px; max-width: 900px; margin: 0 auto; list-style: none; }
-.menu li { flex: 1; text-align: center; }
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 34px;
+    color: var(--primaria);
+    text-decoration: none;
+    text-shadow: 3px 0 var(--secundaria);
+}
+
+.menu { display: flex; gap: 8px; list-style: none; }
 
 .menu a {
     display: block;
@@ -68,14 +78,8 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
 }
 
 .menu a:hover, .menu a:focus { background-color: var(--primaria); color: var(--fundo); }
-
-.menu .logo {
-    padding: 0 16px;
-    font-size: 34px;
-    color: var(--primaria);
-    text-shadow: 3px 0 var(--secundaria);
-}
-
+.menu-check, .menu-botao { display: none; }
+.menu-check:checked + .menu-botao i::before { content: "\f00d"; }
 .secao { max-width: 1100px; margin: 0 auto; padding: 80px var(--espaco); scroll-margin-top: 60px; }
 h2 { font-size: 42px; color: var(--primaria); text-align: center; margin-bottom: 40px; }
 h2 i { color: var(--secundaria); }
@@ -117,7 +121,6 @@ h1 {
 
 /* Apresentação do personagem */
 .apresentacao { height: 260vh; view-timeline-name: --apresentacao; }
-
 .palco { position: sticky; top: 100px; width: 32vh; max-width: 55%; margin: 0 auto; }
 
 .giro {
@@ -275,6 +278,36 @@ h1 {
 #contato { text-align: center; }
 .chamada { max-width: 600px; margin: 0 auto 32px; font-size: 18px; }
 .redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; list-style: none; }
+.titulo-form { font-size: 28px; margin: 56px 0 20px; }
+
+.formulario {
+    display: grid;
+    gap: 6px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--espaco);
+    text-align: left;
+    background-color: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.formulario label { font-weight: 600; }
+
+.formulario input, .formulario textarea {
+    min-height: 48px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--texto);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.formulario input:focus, .formulario textarea:focus { outline: 2px solid var(--primaria); }
+.formulario .botao { justify-content: center; border: none; font-family: inherit; font-size: 16px; cursor: pointer; }
 
 .botao {
     display: inline-flex;
@@ -302,6 +335,21 @@ h1 {
     border-top: 2px solid var(--primaria);
 }
 
+.musica {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 10;
+    padding: 8px 12px;
+    text-align: left;
+    background-color: rgba(13, 13, 13, 0.92);
+    border: 1px solid var(--primaria);
+    border-radius: var(--raio);
+}
+
+.musica p { margin-bottom: 4px; color: var(--texto); }
+.musica audio { display: block; width: 220px; height: 36px; }
+
 /* Animações */
 @keyframes virar { to { background-position: 100% 0; } }
 @keyframes surgir { from { opacity: 0; } }
@@ -311,13 +359,16 @@ h1 {
 
 /* Responsividade */
 @media (max-width: 599px) {
-    .cabecalho { padding: 8px 12px; }
-    .menu { flex-wrap: wrap; }
-    .menu .item-logo { order: -1; flex-basis: 100%; }
-    .menu .logo { font-size: 28px; }
-    .palco { top: 130px; }
-    .menu a { padding: 12px 6px; font-size: 13px; }
-    .secao { padding: 56px 16px; scroll-margin-top: 110px; }
+    .cabecalho { flex-wrap: wrap; padding: 8px 16px; }
+    .logo { font-size: 28px; }
+    .menu-botao { display: block; padding: 8px 12px; font-size: 26px; cursor: pointer; }
+    .navegacao { display: none; width: 100%; }
+    .menu-check:checked ~ .navegacao { display: block; }
+    .menu { flex-direction: column; gap: 0; }
+    .menu a { padding: 14px 8px; border-top: 1px solid var(--borda); }
+    .palco { top: 80px; }
+    .secao { padding: 56px 16px; scroll-margin-top: 70px; }
+    .musica { position: static; display: inline-block; margin-top: 16px; }
     h1 { font-size: 80px; }
     h2 { font-size: 30px; }
     .seta { width: 18px; }
