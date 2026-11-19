@@ -6,49 +6,30 @@ const iconePlay = document.getElementById("icone-play");
 const statusTrilha = document.getElementById("status-trilha");
 const volume = document.getElementById("volume");
 
-const coresNotas = ["#E9B44C", "#E8394F", "#FAFAFA"];
-const simbolosNotas = ["♪", "♫", "♬"];
-
-let analisador = null;
-let dadosSom = null;
-let jaComecou = false;
-let ultimaNota = 0;
+const notas = ["♪", "♫", "♬"];
+const cores = ["#E9B44C", "#E8394F", "#FAFAFA"];
 
 trilha.volume = volume.value / 100;
 
 function atualizarPlayer() {
-    const tocando = !trilha.paused;
-    musica.classList.toggle("tocando", tocando);
-    iconePlay.className = tocando ? "fa-solid fa-pause icone-play" : "fa-solid fa-play icone-play";
-    statusTrilha.textContent = tocando ? "Tocando" : "Pausada";
-}
-
-function ligarAnalisador() {
-    if (analisador || !location.protocol.startsWith("http")) return;
-    const contexto = new AudioContext();
-    const fonte = contexto.createMediaElementSource(trilha);
-    analisador = contexto.createAnalyser();
-    analisador.fftSize = 256;
-    dadosSom = new Uint8Array(analisador.frequencyBinCount);
-    fonte.connect(analisador);
-    analisador.connect(contexto.destination);
-    contexto.resume();
+    if (trilha.paused) {
+        musica.classList.remove("tocando");
+        iconePlay.className = "fa-solid fa-play icone-play";
+        statusTrilha.textContent = "Pausada";
+    } else {
+        musica.classList.add("tocando");
+        iconePlay.className = "fa-solid fa-pause icone-play";
+        statusTrilha.textContent = "Tocando";
+    }
 }
 
 function tocar() {
-    jaComecou = true;
-    ligarAnalisador();
-    trilha.play().catch(() => {});
-}
-
-function comecarNoPrimeiroToque(evento) {
-    if (jaComecou || botaoDisco.contains(evento.target)) return;
-    tocar();
+    trilha.play();
 }
 
 botaoDisco.addEventListener("click", () => {
     if (trilha.paused) {
-        tocar();
+        trilha.play();
     } else {
         trilha.pause();
     }
@@ -61,45 +42,25 @@ volume.addEventListener("input", () => {
 trilha.addEventListener("play", atualizarPlayer);
 trilha.addEventListener("pause", atualizarPlayer);
 
-trilha.play().then(() => {
-    jaComecou = true;
-}).catch(() => {
+trilha.play().catch(() => {
     statusTrilha.textContent = "Clique na página para ouvir";
-    document.addEventListener("pointerdown", comecarNoPrimeiroToque);
-    document.addEventListener("keydown", comecarNoPrimeiroToque);
+    document.addEventListener("click", tocar, { once: true });
 });
 
-function nivelDoSom() {
-    if (!analisador) return 0.5 * trilha.volume;
-    analisador.getByteFrequencyData(dadosSom);
-    let soma = 0;
-    for (const valor of dadosSom) soma += valor;
-    return Math.min(1, (soma / dadosSom.length / 255) * 2.5);
-}
+function soltarNota() {
+    if (trilha.paused || trilha.volume === 0) return;
 
-function soltarNota(nivel) {
     const nota = document.createElement("span");
     nota.className = "nota";
-    nota.textContent = simbolosNotas[Math.floor(Math.random() * simbolosNotas.length)];
-    nota.style.color = coresNotas[Math.floor(Math.random() * coresNotas.length)];
+    nota.textContent = notas[Math.floor(Math.random() * notas.length)];
+    nota.style.color = cores[Math.floor(Math.random() * cores.length)];
     nota.style.left = 6 + Math.random() * 30 + "px";
-    nota.style.fontSize = 14 + nivel * 14 + "px";
+    nota.style.fontSize = 14 + trilha.volume * 14 + "px";
     nota.addEventListener("animationend", () => nota.remove());
     musica.appendChild(nota);
 }
 
-function animarNotas(tempo) {
-    if (!trilha.paused) {
-        const nivel = nivelDoSom();
-        if (nivel > 0.02 && tempo - ultimaNota > 1200 - nivel * 900) {
-            soltarNota(nivel);
-            ultimaNota = tempo;
-        }
-    }
-    requestAnimationFrame(animarNotas);
-}
-
-requestAnimationFrame(animarNotas);
+setInterval(soltarNota, 600);
 
 /* Menu e URL de cada seção */
 const menuCheck = document.getElementById("menu-check");
@@ -119,15 +80,21 @@ window.addEventListener("scroll", () => {
 const observador = new IntersectionObserver(entradas => {
     entradas.forEach(entrada => {
         if (!entrada.isIntersecting) return;
+
         const id = entrada.target.id;
-        linksMenu.forEach(link => link.classList.toggle("ativo", link.getAttribute("href") === "#" + id));
-        if (paginaRolou) history.replaceState(null, "", "#" + id);
+        linksMenu.forEach(link => {
+            link.classList.toggle("ativo", link.getAttribute("href") === "#" + id);
+        });
+
+        if (paginaRolou) {
+            history.replaceState(null, "", "#" + id);
+        }
     });
 }, { rootMargin: "-45% 0px -50% 0px" });
 
 document.querySelectorAll("main section").forEach(secao => observador.observe(secao));
 
-/* Contato */
+/* Janela de contato */
 const janela = document.getElementById("janela-contato");
 const formulario = document.getElementById("formulario");
 const avisoEnvio = document.getElementById("aviso-envio");
@@ -141,6 +108,7 @@ document.getElementById("fechar-contato").addEventListener("click", () => janela
 formulario.addEventListener("submit", async evento => {
     evento.preventDefault();
     avisoEnvio.textContent = "Enviando...";
+
     try {
         const resposta = await fetch("https://formsubmit.co/ajax/syx.company00@gmail.com", {
             method: "POST",
@@ -148,15 +116,19 @@ formulario.addEventListener("submit", async evento => {
             body: JSON.stringify(Object.fromEntries(new FormData(formulario)))
         });
         const dados = await resposta.json();
-        if (dados.success !== "true" && dados.success !== true) throw new Error(dados.message);
-        avisoEnvio.textContent = "Mensagem enviada! Logo eu respondo.";
-        formulario.reset();
+
+        if (dados.success === "true" || dados.success === true) {
+            avisoEnvio.textContent = "Mensagem enviada! Logo eu respondo.";
+            formulario.reset();
+        } else {
+            avisoEnvio.textContent = "Não deu para enviar agora. Tente pelo WhatsApp ou pelo e-mail.";
+        }
     } catch (erro) {
-        avisoEnvio.textContent = "Não deu para enviar agora. Tente pelo WhatsApp ou pelo e-mail.";
+        avisoEnvio.textContent = "Sem conexão. Tente pelo WhatsApp ou pelo e-mail.";
     }
 });
 
-/* Barra lateral */
+/* Barra lateral que encolhe */
 const botaoRecolher = document.getElementById("recolher-menu");
 
 if (localStorage.getItem("menuRecolhido") === "sim") {
@@ -165,6 +137,10 @@ if (localStorage.getItem("menuRecolhido") === "sim") {
 
 botaoRecolher.addEventListener("click", () => {
     document.body.classList.toggle("recolhida");
-    const recolhida = document.body.classList.contains("recolhida");
-    localStorage.setItem("menuRecolhido", recolhida ? "sim" : "nao");
+
+    if (document.body.classList.contains("recolhida")) {
+        localStorage.setItem("menuRecolhido", "sim");
+    } else {
+        localStorage.setItem("menuRecolhido", "nao");
+    }
 });

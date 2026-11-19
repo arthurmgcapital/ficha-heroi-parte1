@@ -43,8 +43,11 @@ body::before {
 }
 
 h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
+h2 { font-size: 42px; color: var(--primaria); text-align: center; margin-bottom: 40px; }
+h2 i { color: var(--secundaria); }
+.secao { max-width: 1100px; margin: 0 auto; padding: 80px var(--espaco); scroll-margin-top: 70px; }
 
-/* Cabeçalho e barra lateral */
+/* Barra lateral e menu */
 .cabecalho {
     position: sticky;
     top: 0;
@@ -91,12 +94,46 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
 .menu a:hover, .menu a:focus, .menu a.ativo { background-color: var(--primaria); color: var(--fundo); }
 .menu a:hover i, .menu a:focus i, .menu a.ativo i { color: var(--fundo); }
 
-.secao { max-width: 1100px; margin: 0 auto; padding: 80px var(--espaco); scroll-margin-top: 70px; }
-h2 { font-size: 42px; color: var(--primaria); text-align: center; margin-bottom: 40px; }
-h2 i { color: var(--secundaria); }
-#sobre { padding-top: 40px; }
+/* Trilha */
+.musica { position: relative; display: flex; align-items: center; gap: 12px; }
+
+.vitrola {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    flex: none;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+}
+
+.disco {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--primaria) 0 30%, var(--fundo) 31% 34%, transparent 35%),
+        conic-gradient(rgba(255, 255, 255, 0.2) 0 8%, transparent 8% 50%, rgba(255, 255, 255, 0.2) 50% 58%, transparent 58%),
+        repeating-radial-gradient(circle, #161616 0 2px, #272727 3px 4px);
+    box-shadow: 0 0 0 2px var(--primaria);
+    animation: girar-disco 4s linear infinite paused;
+}
+
+.tocando .disco { animation-play-state: running; }
+.icone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; color: var(--secundaria); }
+.controles { display: none; flex: 1; }
+.nome-trilha { font-weight: 700; }
+.status-trilha { font-size: 13px; color: var(--texto-suave); }
+.volume { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--texto-suave); }
+.volume input { width: 100%; accent-color: var(--primaria); cursor: pointer; }
+.nota { position: absolute; left: 14px; bottom: 34px; pointer-events: none; animation: subir-nota 2.4s ease-out forwards; }
 
 /* Sobre o herói */
+#sobre { padding-top: 40px; }
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -294,35 +331,6 @@ h1 {
 .titulo-form { font-size: 28px; margin: 56px 0 20px; }
 #desenvolvedor { scroll-margin-top: 90px; }
 
-.formulario {
-    display: grid;
-    gap: 6px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: var(--espaco);
-    text-align: left;
-    background-color: var(--card);
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
-}
-
-.formulario label { font-weight: 600; }
-
-.formulario input, .formulario textarea {
-    min-height: 48px;
-    padding: 12px;
-    margin-bottom: 10px;
-    font-family: inherit;
-    font-size: 16px;
-    color: var(--texto);
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--borda);
-    border-radius: 8px;
-}
-
-.formulario input:focus, .formulario textarea:focus { outline: 2px solid var(--primaria); }
-.formulario .botao { justify-content: center; border: none; font-family: inherit; font-size: 16px; cursor: pointer; }
-
 .botao {
     display: inline-flex;
     align-items: center;
@@ -338,6 +346,8 @@ h1 {
 }
 
 .botao:hover, .botao:focus { background-color: var(--secundaria); transform: scale(1.06); }
+button.botao { border: none; font-family: inherit; font-size: 16px; cursor: pointer; }
+.formulario .botao { justify-content: center; }
 .redes .botao { min-height: 52px; }
 .logo-marca { width: 28px; height: 28px; padding: 4px; object-fit: contain; background-color: #FFFFFF; border-radius: 50%; }
 
@@ -351,44 +361,7 @@ h1 {
     border-top: 2px solid var(--primaria);
 }
 
-/* Trilha */
-.musica { position: relative; display: flex; align-items: center; gap: 12px; }
-
-.vitrola {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    flex: none;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: none;
-    cursor: pointer;
-}
-
-.disco {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background:
-        radial-gradient(circle, var(--primaria) 0 30%, var(--fundo) 31% 34%, transparent 35%),
-        conic-gradient(rgba(255, 255, 255, 0.2) 0 8%, transparent 8% 50%, rgba(255, 255, 255, 0.2) 50% 58%, transparent 58%),
-        repeating-radial-gradient(circle, #161616 0 2px, #272727 3px 4px);
-    box-shadow: 0 0 0 2px var(--primaria);
-    animation: girar-disco 4s linear infinite paused;
-}
-
-.tocando .disco { animation-play-state: running; }
-.icone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; color: var(--secundaria); }
-.controles { display: none; flex: 1; }
-.nome-trilha { font-weight: 700; }
-.status-trilha { font-size: 13px; color: var(--texto-suave); }
-.volume { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--texto-suave); }
-.volume input { width: 100%; accent-color: var(--primaria); cursor: pointer; }
-.nota { position: absolute; left: 14px; bottom: 34px; pointer-events: none; animation: subir-nota 2.4s ease-out forwards; }
-
-/* Contato rápido */
+/* Botão flutuante e janela de contato */
 .botao-flutuante {
     position: fixed;
     right: 20px;
@@ -412,7 +385,6 @@ h1 {
 }
 
 .botao-flutuante:hover, .botao-flutuante:focus { background-color: var(--secundaria); transform: scale(1.06); }
-button.botao { border: none; font-family: inherit; font-size: 16px; cursor: pointer; }
 
 .janela-contato {
     width: min(92vw, 520px);
@@ -426,8 +398,23 @@ button.botao { border: none; font-family: inherit; font-size: 16px; cursor: poin
 
 .janela-contato::backdrop { background-color: rgba(0, 0, 0, 0.7); }
 .janela-contato h3 { font-size: 28px; color: var(--primaria); margin-bottom: 16px; }
-.janela-contato .formulario { padding: 0; background: none; border: none; }
 .fechar { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; font-size: 20px; color: var(--texto); background: none; border: none; cursor: pointer; }
+.formulario { display: grid; gap: 6px; text-align: left; }
+.formulario label { font-weight: 600; }
+
+.formulario input, .formulario textarea {
+    min-height: 48px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--texto);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.formulario input:focus, .formulario textarea:focus { outline: 2px solid var(--primaria); }
 .aviso-envio { min-height: 24px; font-weight: 600; color: var(--destaque); }
 
 /* Animações */
@@ -448,6 +435,10 @@ button.botao { border: none; font-family: inherit; font-size: 16px; cursor: poin
     h2 { font-size: 30px; }
     .seta { width: 18px; }
     .rotulo { padding: 3px 6px; font-size: 11px; white-space: normal; }
+}
+
+@media (min-width: 600px) {
+    .grade-itens { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
@@ -504,10 +495,6 @@ button.botao { border: none; font-family: inherit; font-size: 16px; cursor: poin
     .recolhida .recolher { transform: rotate(180deg); }
     .secao { scroll-margin-top: 0; }
     #desenvolvedor { scroll-margin-top: 30px; }
-}
-
-@media (min-width: 600px) {
-    .grade-itens { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {

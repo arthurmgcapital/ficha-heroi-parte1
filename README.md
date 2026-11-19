@@ -55,7 +55,7 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - Flexbox no menu e Grid no inventário, com 1 coluna no celular, 2 no tablet e 3 no desktop.
 - Barra lateral no computador com a logo, o menu com ícones e o player da trilha. Um botão na borda encolhe a barra (fica só com os ícones) e amplia de volta, e o navegador lembra a escolha (`localStorage`). No celular e no tablet vira uma barra no topo com menu sanduíche (checkbox escondido e `:checked`).
 - JavaScript liberado pela professora, num arquivo separado (`script.js`):
-  - Player em disco de vinil: clique no disco toca e pausa, o disco só gira quando a música toca, barra de volume e notas musicais que saem do disco conforme o volume da música (Web Audio API).
+  - Player em disco de vinil: clique no disco toca e pausa, o disco só gira quando a música toca, barra de volume e notas musicais que saem do disco enquanto a música toca (maiores quanto mais alto o volume).
   - A página tenta abrir com a música tocando. Quando o navegador bloqueia som automático, ela começa no primeiro clique na página.
   - O menu marca a seção que está na tela e a URL muda junto (`#sobre`, `#atributos`, `#inventario`, `#contato`), então o F5 volta para o mesmo lugar.
   - Contato fácil: botão flutuante "Fale comigo" que abre uma janela com formulário curto (nome, e-mail ou telefone e mensagem), enviado sem sair da página, além de botões diretos de WhatsApp e e-mail.
