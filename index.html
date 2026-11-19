@@ -14,15 +14,31 @@
 <body>
     <header class="cabecalho">
         <a href="#sobre" class="logo">SYX</a>
+
+        <div class="musica" id="musica">
+            <button type="button" class="vitrola" id="botao-disco" aria-label="Tocar ou pausar a trilha">
+                <span class="disco"></span>
+                <i class="fa-solid fa-play icone-play" id="icone-play"></i>
+            </button>
+            <div class="controles">
+                <p class="nome-trilha">Trilha do Syx</p>
+                <p class="status-trilha" id="status-trilha">Pausada</p>
+                <label class="volume"><i class="fa-solid fa-volume-high"></i>
+                    <input type="range" id="volume" min="0" max="100" value="60" aria-label="Volume da trilha">
+                </label>
+            </div>
+            <audio id="trilha" src="musica/trilha-syx.mp3" loop preload="auto"></audio>
+        </div>
+
         <input type="checkbox" id="menu-check" class="menu-check">
         <label for="menu-check" class="menu-botao"><i class="fa-solid fa-bars"></i></label>
         <nav class="navegacao">
             <ul class="menu">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#atributos">Atributos</a></li>
-                <li><a href="#inventario">Inventário</a></li>
-                <li><a href="#contato">Guilda</a></li>
-                <li><a href="#desenvolvedor">Fale comigo</a></li>
+                <li><a href="#sobre"><i class="fa-solid fa-user"></i> Sobre</a></li>
+                <li><a href="#atributos"><i class="fa-solid fa-bolt"></i> Atributos</a></li>
+                <li><a href="#inventario"><i class="fa-solid fa-box-open"></i> Inventário</a></li>
+                <li><a href="#contato"><i class="fa-solid fa-users"></i> Guilda</a></li>
+                <li><a href="#desenvolvedor"><i class="fa-solid fa-comment-dots"></i> Fale comigo</a></li>
             </ul>
         </nav>
     </header>
@@ -109,6 +125,11 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="painel ponto-fraco">
+                    <h3><i class="fa-solid fa-heart-crack"></i> Ponto fraco</h3>
+                    <p><strong>Medo de altura.</strong> Corre pelos telhados, mas nunca olha para baixo. Se olhar, trava.</p>
+                </div>
             </div>
         </section>
 
@@ -170,46 +191,42 @@
             </ul>
 
             <h3 id="desenvolvedor" class="titulo-form">Fale com o desenvolvedor</h3>
-            <form class="formulario" action="https://formsubmit.co/arthursiqueira.xx@gmail.com" method="POST">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://arthurmgcapital.github.io/ficha-heroi-parte1/#contato">
-                <input type="hidden" name="pedido" value="Solicitação de contato pela Ficha de Herói do Syx">
-
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="voce@email.com" required>
-
-                <label for="assunto">Assunto</label>
-                <input type="text" id="assunto" name="_subject" placeholder="Sobre o que você quer falar?" required>
-
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
-
-                <button type="submit" class="botao">Enviar mensagem</button>
-            </form>
+            <p class="chamada">Escolha o jeito mais fácil para você.</p>
+            <ul class="redes">
+                <li><button type="button" class="botao abrir-contato"><i class="fa-solid fa-paper-plane"></i> Escrever mensagem</button></li>
+                <li><a href="https://wa.me/5513974253994?text=Ol%C3%A1!%20Vi%20a%20Ficha%20de%20Her%C3%B3i%20do%20Syx." target="_blank" class="botao"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                <li><a href="mailto:syx.company00@gmail.com?subject=Contato%20pela%20Ficha%20de%20Her%C3%B3i" class="botao"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+            </ul>
         </section>
     </main>
+
+    <button type="button" class="botao-flutuante abrir-contato" aria-label="Fale comigo"><i class="fa-solid fa-comment-dots"></i> <span>Fale comigo</span></button>
+
+    <dialog class="janela-contato" id="janela-contato">
+        <button type="button" class="fechar" id="fechar-contato" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+        <h3>Fale com o desenvolvedor</h3>
+        <form class="formulario" id="formulario" action="https://formsubmit.co/syx.company00@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Novo contato pela Ficha de Herói do Syx">
+            <input type="hidden" name="_template" value="table">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+            <label for="contato-pessoa">E-mail ou telefone</label>
+            <input type="text" id="contato-pessoa" name="contato" placeholder="Como eu te respondo?" required>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+
+            <button type="submit" class="botao">Enviar mensagem</button>
+            <p class="aviso-envio" id="aviso-envio" role="status"></p>
+        </form>
+    </dialog>
 
     <footer class="rodape">
         <p>Ficha de Herói | Syx | Projeto Parte 1</p>
         <p>&copy; 2026 Arthur Siqueira. Todos os direitos reservados.</p>
-        <div class="musica">
-            <div class="vitrola">
-                <div class="disco"></div>
-                <span class="nota">♪</span>
-                <span class="nota">♫</span>
-                <span class="nota">♪</span>
-            </div>
-            <div class="controles">
-                <p><i class="fa-solid fa-music"></i> Trilha do Syx</p>
-                <audio src="musica/trilha-syx.mp3" controls loop preload="none"></audio>
-            </div>
-        </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

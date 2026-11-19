@@ -27,6 +27,7 @@ O formulário de contato só envia pelo site publicado. Abrindo o `index.html` d
 ficha-heroi-parte1/
 ├── index.html
 ├── style.css
+├── script.js
 ├── README.md
 ├── imagens/
 │   ├── syx.webp
@@ -51,10 +52,13 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - CSS em arquivo externo, organizado em blocos comentados por seção.
 - Paleta Jordan Bred (preto, vermelho, branco e dourado) em variáveis no `:root`.
 - Flexbox no menu e Grid no inventário, com 1 coluna no celular, 2 no tablet e 3 no desktop.
-- Top bar com a logo à esquerda e os links no centro (grid de 3 colunas no cabeçalho e Flexbox no menu). No celular vira menu sanduíche feito só com CSS (checkbox escondido e `:checked`).
-- Cada seção tem sua própria URL (`#sobre`, `#atributos`, `#inventario`, `#contato` e `#desenvolvedor`). O link "Fale comigo" do menu leva direto ao formulário.
-- Formulário de contato com o desenvolvedor (nome, telefone, e-mail, assunto e mensagem), enviado pelo FormSubmit sem JavaScript.
-- Trilha de fundo original num disco de vinil feito só com CSS (gradientes), que gira com notas musicais subindo e sumindo. Passando o mouse no disco aparece o controle de play e volume (`<audio controls loop>`). Ela não toca sozinha porque os navegadores bloqueiam som automático.
+- Barra lateral no computador com a logo, o menu com ícones e o player da trilha. No celular e no tablet vira uma barra no topo com menu sanduíche (checkbox escondido e `:checked`).
+- JavaScript liberado pela professora, num arquivo separado (`script.js`):
+  - Player em disco de vinil: clique no disco toca e pausa, o disco só gira quando a música toca, barra de volume e notas musicais que saem do disco conforme o volume da música (Web Audio API).
+  - A página tenta abrir com a música tocando. Quando o navegador bloqueia som automático, ela começa no primeiro clique na página.
+  - O menu marca a seção que está na tela e a URL muda junto (`#sobre`, `#atributos`, `#inventario`, `#contato`), então o F5 volta para o mesmo lugar.
+  - Contato fácil: botão flutuante "Fale comigo" que abre uma janela com formulário curto (nome, e-mail ou telefone e mensagem), enviado sem sair da página, além de botões diretos de WhatsApp e e-mail.
+- Painel de ponto fraco do herói: medo de altura.
 - Barras de atributo feitas com uma `div` e `width` em porcentagem.
 - `transition` nos botões, links do menu e cards do inventário.
 - Pseudo-elementos `::before` na estrela do item lendário e na ponta das setas.
