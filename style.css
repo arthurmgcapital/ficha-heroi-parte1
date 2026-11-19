@@ -67,7 +67,7 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: normal; }
     text-shadow: 3px 0 var(--secundaria);
 }
 
-.menu-check { display: none; }
+.menu-check, .recolher { display: none; }
 .menu-botao { padding: 8px 12px; font-size: 26px; cursor: pointer; }
 .menu-check:checked + .menu-botao i::before { content: "\f00d"; }
 .navegacao { display: none; width: 100%; }
@@ -338,6 +338,8 @@ h1 {
 }
 
 .botao:hover, .botao:focus { background-color: var(--secundaria); transform: scale(1.06); }
+.redes .botao { min-height: 52px; }
+.logo-marca { width: 28px; height: 28px; padding: 4px; object-fit: contain; background-color: #FFFFFF; border-radius: 50%; }
 
 /* Rodapé */
 .rodape {
@@ -473,6 +475,33 @@ button.botao { border: none; font-family: inherit; font-size: 16px; cursor: poin
     .vitrola { width: 64px; height: 64px; }
     .controles { display: block; }
     .palco { top: 40px; }
+    body, .cabecalho { transition: padding 0.3s, width 0.3s; }
+
+    .recolher {
+        position: absolute;
+        top: 24px;
+        right: -17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        color: var(--fundo);
+        background-color: var(--primaria);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .recolhida { padding-left: 84px; }
+    .recolhida .cabecalho { width: 84px; padding: 32px 10px; }
+    .recolhida .logo { font-size: 26px; }
+    .recolhida .menu a { justify-content: center; padding: 12px 0; }
+    .recolhida .menu a span, .recolhida .controles { display: none; }
+    .recolhida .musica { justify-content: center; padding: 8px 0; }
+    .recolhida .vitrola { width: 48px; height: 48px; }
+    .recolhida .recolher { transform: rotate(180deg); }
     .secao { scroll-margin-top: 0; }
     #desenvolvedor { scroll-margin-top: 30px; }
 }

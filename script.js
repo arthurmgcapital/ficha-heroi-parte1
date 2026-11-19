@@ -155,3 +155,16 @@ formulario.addEventListener("submit", async evento => {
         avisoEnvio.textContent = "Não deu para enviar agora. Tente pelo WhatsApp ou pelo e-mail.";
     }
 });
+
+/* Barra lateral */
+const botaoRecolher = document.getElementById("recolher-menu");
+
+if (localStorage.getItem("menuRecolhido") === "sim") {
+    document.body.classList.add("recolhida");
+}
+
+botaoRecolher.addEventListener("click", () => {
+    document.body.classList.toggle("recolhida");
+    const recolhida = document.body.classList.contains("recolhida");
+    localStorage.setItem("menuRecolhido", recolhida ? "sim" : "nao");
+});

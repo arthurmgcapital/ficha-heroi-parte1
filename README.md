@@ -35,6 +35,7 @@ ficha-heroi-parte1/
 │   ├── conquista-telhados.svg
 │   ├── conquista-torre.svg
 │   ├── logo-syx.svg
+│   ├── marcas/ (logos do Discord, GitHub, WhatsApp e Gmail)
 │   └── cidade.webp
 ├── musica/
 │   └── trilha-syx.mp3
@@ -52,7 +53,7 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - CSS em arquivo externo, organizado em blocos comentados por seção.
 - Paleta Jordan Bred (preto, vermelho, branco e dourado) em variáveis no `:root`.
 - Flexbox no menu e Grid no inventário, com 1 coluna no celular, 2 no tablet e 3 no desktop.
-- Barra lateral no computador com a logo, o menu com ícones e o player da trilha. No celular e no tablet vira uma barra no topo com menu sanduíche (checkbox escondido e `:checked`).
+- Barra lateral no computador com a logo, o menu com ícones e o player da trilha. Um botão na borda encolhe a barra (fica só com os ícones) e amplia de volta, e o navegador lembra a escolha (`localStorage`). No celular e no tablet vira uma barra no topo com menu sanduíche (checkbox escondido e `:checked`).
 - JavaScript liberado pela professora, num arquivo separado (`script.js`):
   - Player em disco de vinil: clique no disco toca e pausa, o disco só gira quando a música toca, barra de volume e notas musicais que saem do disco conforme o volume da música (Web Audio API).
   - A página tenta abrir com a música tocando. Quando o navegador bloqueia som automático, ela começa no primeiro clique na página.
@@ -81,6 +82,7 @@ Protótipo feito com Bootstrap: https://arthurmgcapital.github.io/ficha-heroi-pr
 - Fonte dos títulos: Far From Homecoming (maisfontes). A logo SYX do ícone da aba foi feita com ela.
 - Fonte do texto: Chakra Petch (Google Fonts).
 - Ícones: Font Awesome.
+- Logos do Discord, GitHub, WhatsApp e Gmail: svgl.app.
 - Imagens do personagem geradas com IA (ChatGPT) a partir da descrição do Syx feita para este projeto.
 - Fundo da cidade desenhado em SVG para este projeto e convertido para WebP.
 - Ilustrações das conquistas desenhadas em SVG para este projeto.
